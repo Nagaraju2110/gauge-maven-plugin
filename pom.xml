@@ -1,12 +1,18 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.thoughtworks.gauge.maven</groupId>
     <artifactId>gauge-maven-plugin</artifactId>
     <version>1.6.1</version>
     <packaging>maven-plugin</packaging>
+
     <name>Gauge Maven Plugin</name>
     <url>http://github.com/getgauge/gauge-maven-plugin</url>
     <description>A maven plugin to execute gauge specs in the project</description>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.version>3.8.1</maven.version>
@@ -14,6 +20,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.maven</groupId>
@@ -60,6 +67,7 @@
             <version>3.13.0</version>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -75,6 +83,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -88,6 +97,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
@@ -108,6 +118,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -119,7 +130,15 @@
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
+
+            <sonarqube analysis>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>4.0.0.4121</version>
+            </plugin>
         </plugins>
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -141,21 +160,8 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <plugin>
-    <groupId>org.sonarsource.scanner.maven</groupId>
-    <artifactId>sonar-maven-plugin</artifactId>
-    <version>4.0.0.4121</version>
-    <executions>
-        <execution>
-            <id>sonar-analysis</id>
-            <phase>verify</phase>
-            <goals>
-                <goal>sonar</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>
     </build>
+
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -166,12 +172,14 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+
     <licenses>
         <license>
             <name>GNU Public License version 3.0</name>
             <url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
         </license>
     </licenses>
+
     <developers>
         <developer>
             <name>Gauge Team</name>
@@ -180,6 +188,7 @@
             <organizationUrl>http://thoughtworks.com/</organizationUrl>
         </developer>
     </developers>
+
     <scm>
         <connection>scm:git:git@github.com:getgauge/gauge-java.git</connection>
         <developerConnection>scm:git:git@github.com:getgauge/gauge-java.git</developerConnection>
