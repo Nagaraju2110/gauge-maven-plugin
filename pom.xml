@@ -1,6 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -132,19 +132,20 @@
             </plugin>
 
             <plugin>
-               <groupId>org.sonarsource.scanner.maven</groupId>
-               <artifactId>sonar-maven-plugin</artifactId>
-               <version>4.0.0.4121</version>
-               <executions>
-               <execution>
-               <id>sonar-analysis</id>
-              <phase>verify</phase>
-              <goals>
-                <goal>sonar</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>4.0.0.4121</version>
+                <executions>
+                    <execution>
+                        <id>sonar-analysis</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sonar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
 
         <pluginManagement>
             <plugins>
