@@ -131,13 +131,20 @@
                 </configuration>
             </plugin>
 
-            <sonarqube analysis>
             <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>4.0.0.4121</version>
-            </plugin>
-        </plugins>
+               <groupId>org.sonarsource.scanner.maven</groupId>
+               <artifactId>sonar-maven-plugin</artifactId>
+               <version>4.0.0.4121</version>
+               <executions>
+               <execution>
+               <id>sonar-analysis</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>sonar</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
 
         <pluginManagement>
             <plugins>
